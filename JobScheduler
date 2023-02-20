@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+public class JobScheduler {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the number of Jobs: ");
+        int n = sc.nextInt()
+        for (int i = 0; i < n; i++) {
+            int currentMaxEarnings = jobs.get(i).earnings;
+            for (int j = 0; j < i; j++) {
+                if (jobs.get(j).endTime <= jobs.get(i).startTime) {
+                    currentMaxEarnings = Math.max(currentMaxEarnings, jobs.get(i).earnings + maxEarnings[j]);
+                }
+            }
+            maxEarnings[i] = currentMaxEarnings;
+        }
+       
+        System.out.println("The number of tasks and earnings available for others");
+        System.out.println("Task: " + remainingJobs);
+        System.out.println("Earnings: " + (totalEarnings - maxEarnings[remainingJobs - 1]));
+    }
+}
+
+class Job {
+    int startTime;
+    int endTime;
+    int earnings;
+
+    public Job(int startTime, int endTime, int earnings) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.earnings = earnings;
+    }
+
+    public int getEndTime() {
+        return endTime;
+    }
+}0
